@@ -14,6 +14,6 @@ fi
 
 echo "Creating checkpoint from existing blockchain data directories..."
 
-tar -czvf $POCKETDIR/$CHECKPOINT_FILE -C $POCKETDIR blocks chainstate indexes pocketdb
+tar -czvf $POCKETDIR/$CHECKPOINT_FILE -C $POCKETDIR blocks chainstate indexes pocketdb checkpoints
 
 echo "Checkpoint backup created."
