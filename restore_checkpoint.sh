@@ -1,7 +1,7 @@
 #!/bin/bash
 
 [[ -z "${POCKETDIR}" ]] && POCKETDIR="$HOME/.pocketcoin" || POCKETDIR="${POCKETDIR}"
-CHECKPOINT_FILE="pocketnet.checkpoint.latest.tgz"
+CHECKPOINT_FILE="latest.tgz"
 
 if [ -f "$POCKETDIR/$CHECKPOINT_FILE" ]
 then
@@ -26,6 +26,7 @@ then
     rm -r $POCKETDIR/chainstate
     rm -r $POCKETDIR/indexes
     rm -r $POCKETDIR/pocketdb
+    rm -r $POCKETDIR/checkpoints
 
     echo "Restoring blockchain data from checkpoint..."
     tar -xzvf $POCKETDIR/$CHECKPOINT_FILE -C $POCKETDIR
