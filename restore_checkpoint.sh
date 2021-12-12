@@ -10,13 +10,13 @@ then
     then
         echo "Re-downloading checkpoint file..."
         rm "$POCKETDIR/$CHECKPOINT_FILE"
-        wget --directory-prefix="$POCKETDIR" "https://3.pocketnet.app/checkpoint/$CHECKPOINT_FILE"
+        wget --directory-prefix="$POCKETDIR" "https://snapshot.pocketnet.app/$CHECKPOINT_FILE"
     else
         exit
     fi
 else
     echo "Downloading checkpoint file..."
-    wget --directory-prefix="$POCKETDIR" "https://3.pocketnet.app/checkpoint/$CHECKPOINT_FILE"
+    wget --directory-prefix="$POCKETDIR" "https://snapshot.pocketnet.app/$CHECKPOINT_FILE"
 fi
 
 if [ -f "$POCKETDIR/$CHECKPOINT_FILE" ]
