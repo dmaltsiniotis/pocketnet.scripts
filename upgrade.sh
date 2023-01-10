@@ -19,7 +19,7 @@ else
         echo "${POCKETPROCESS} version ${POCKETVERSION} is already downloaded."
     else
         echo "Downloading new version of ${POCKETPROCESS}: ${POCKETNETD_FILENAME}"
-        wget "https://github.com/pocketnetteam/pocketnet.core/releases/download/v${POCKETVERSION}/${POCKETNETD_FILENAME}"
+        wget "https://github.com/pocketnetteam/pocketnet.core/releases/download/${POCKETVERSION}/${POCKETNETD_FILENAME}"
     fi
 
     if [ -f "$HOME/${POCKETNETD_FILENAME}" ]

@@ -3,8 +3,8 @@
 [[ -z "${POCKETCONF}" ]] && POCKETCONF="$HOME/.pocketcoin/pocketcoin.conf" || POCKETCONF="${POCKETCONF}"
 
 # The 'd' is specifically omited here because the process name changes when the shutdown command is issued from pocketcoind to pocketcoin-shut
-# This script will definetely fail if the username it's running has also happens to be 'pocketcoin', or there's another command running wtih 'pocketcoin' in the name.
-PROCESSNAME="pocketcoin" 
+# This script will definetely fail if the user name it's running as also happens to be 'pocketcoin', or there's another command running wtih 'pocketcoin' in the process name.
+PROCESSNAME="pocketcoin"
 WAITTRIES=1
 
 echo "Issuing 'stop' command via pocketcoin-cli...";
