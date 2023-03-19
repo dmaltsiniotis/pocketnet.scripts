@@ -1,6 +1,6 @@
 #!/bin/bash
 [[ -z "${POCKETDIR}" ]] && POCKETDIR="$HOME/.pocketcoin" || POCKETDIR="${POCKETDIR}"
-CHECKPOINT_FILE="pocketnet.checkpoint.$(date "+%Y-%m-%d_%H_%M_%S").tgz"
+CHECKPOINT_FILE="pocketnet.checkpoint.$(date "+%Y-%m-%d_%H_%M_%S").tar.xz"
 
 if [ -f "$POCKETDIR/$CHECKPOINT_FILE" ]
 then
@@ -14,6 +14,6 @@ fi
 
 echo "Creating checkpoint from existing blockchain data directories..."
 
-tar -czvf $POCKETDIR/$CHECKPOINT_FILE -C $POCKETDIR blocks chainstate indexes pocketdb checkpoints
+tar -cvf $POCKETDIR/$CHECKPOINT_FILE --use-compress-program='xz -6T0' -C $POCKETDIR blocks chainstate indexes pocketdb checkpoints
 
 echo "Checkpoint backup created."
